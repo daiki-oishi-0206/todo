@@ -5,13 +5,31 @@
 @endsection
 
 @section('content')
+<!-- メッセージ -->
+@if(session('message'))
+<div class="message">
+    <div class="message__inner">
+        {{session('message')}}
+    </div>
+</div>
+@endif
+
+<!-- エラーメッセージ -->
+@error('content')
+    <div class="form__error">
+        <div class="form__error--inner">
+            {{ $message }}
+            @enderror
+        </div>
+    </div>
+
+<!-- フォーム画面 -->
 <div class="todo">
-    <!-- フォーム画面 -->
     <div class="todo__form">
-        <form action="/" method="post">
+        <form action="/todos" method="post" name="">
             @csrf
-            <input class="todo__input" type="text" name="content">
-            <button class="todo__button" type="submit">作成</button>
+            <input class="todo__input" type="text" name="content" value="{{ old('content') }}">
+            <button class=" todo__button" type="submit">作成</button>
         </form>
     </div>
 

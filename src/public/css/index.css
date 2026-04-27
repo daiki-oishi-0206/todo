@@ -1,7 +1,7 @@
 /* フォームスペース */
 .todo{
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 50px auto ;
 }
 
 .todo__form{
@@ -81,3 +81,32 @@
 .delete{
     background: red;
 }
+
+ /* message */
+.message {
+    background: #f0f0f0;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.message__inner {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* エラーメッセージ */
+.form__error {
+    background: #ffe5e5;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.form__error--inner {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
