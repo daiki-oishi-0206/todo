@@ -50,6 +50,12 @@
     margin: 0;
 }
 
+.todo__list--item form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .todo__list--item {
     display: flex;
     justify-content: space-between;
@@ -57,21 +63,26 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.todo__update--text{
+    border: none;
+    outline: none;
     font-size: 15px;
     font-weight: bold;
+    width: 300px;
 }
 
-.todo__actions {
-    display: flex;
-    gap: 20px;
-}
 
 .todo__list--btn{
+    display: flex;
+    gap: 10px;
     font-size: 15px;
     padding: 5px 10px;
     color: #fff;
     border-radius: 3px;
     border: none;
+    cursor: pointer;
 }
 
 .update{
