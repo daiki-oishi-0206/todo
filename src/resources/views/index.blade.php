@@ -40,18 +40,23 @@
         <ul class="todo__list--items">
             @foreach($todos as $todo)
             <li class="todo__list--item">
-                <form action="/todos/update" method="post"　class = "tood__left">
-                    @csrf
-                    <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
-                    <input type="text" class="todo__update--text" name="content" value="{{$todo->content}}">
+                <input type="text" class="todo__update--text" name="content" value="{{$todo->content}}">
+    <!-- ボタン -->
+                <div class="todo__btns">
+                    <form action="/todos/update" method="post">
+                        @csrf
+                        <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
+                        <input type="hidden" class="todo__update--text" name="content" value="{{$todo->content}}">
                         <button class="todo__list--btn update btn" type="submit">更新</button>
-                </form>
+                    </form>
 
-                <form action="/todos/destroy" method="post" class = "todo__right">
-                    @csrf
-                    <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
-                    <button class="todo__list--btn delete" type="submit">削除</button>
-                </form>
+                    <form action="/todos/destroy" method="post">
+                        @csrf
+                        <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
+                        <button class="todo__list--btn delete" type="submit">削除</button>
+                    </form>
+                </div>
+
 
 
             </li>

@@ -73,6 +73,11 @@
     width: 300px;
 }
 
+.todo__btns{
+    margin-left: auto;
+        display: flex;
+        gap: 20px;
+}
 
 .todo__list--btn{
     display: flex;
@@ -120,4 +125,3 @@
     padding: 0 20px;
     text-align: left;
 }
-
