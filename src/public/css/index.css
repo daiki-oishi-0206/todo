@@ -50,11 +50,6 @@
     margin: 0;
 }
 
-.todo__list--item form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
 .todo__list--item {
     display: flex;

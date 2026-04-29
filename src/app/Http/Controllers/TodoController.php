@@ -34,7 +34,7 @@ class TodoController extends Controller
 
     public function destroy(Request $request){
         $todo = Todo::find($request->input('id'))-> delete();
-        return redirect('/')->with('massage', '削除しました');
+        return redirect('/')->with('message', '削除しました');
 
     }
 }

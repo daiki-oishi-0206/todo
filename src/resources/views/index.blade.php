@@ -19,9 +19,9 @@
 <div class="form__error">
     <div class="form__error--inner">
         {{ $message }}
-        @enderror
     </div>
 </div>
+@enderror
 
 <!-- フォーム画面 -->
 <div class="todo">
@@ -41,18 +41,18 @@
             @foreach($todos as $todo)
             <li class="todo__list--item">
                 <input type="text" class="todo__update--text" name="content" value="{{$todo->content}}">
-    <!-- ボタン -->
+                <!-- ボタン -->
                 <div class="todo__btns">
                     <form action="/todos/update" method="post">
                         @csrf
-                        <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
-                        <input type="hidden" class="todo__update--text" name="content" value="{{$todo->content}}">
+                        <input type="hidden" name="id" value="{{$todo->id}}">
+                        <input type="hidden" name="content" value="{{$todo->content}}">
                         <button class="todo__list--btn update btn" type="submit">更新</button>
                     </form>
 
                     <form action="/todos/destroy" method="post">
                         @csrf
-                        <input type="hidden" class="todo__update" name="id" value="{{$todo->id}}">
+                        <input type="hidden" name="id" value="{{$todo->id}}">
                         <button class="todo__list--btn delete" type="submit">削除</button>
                     </form>
                 </div>
