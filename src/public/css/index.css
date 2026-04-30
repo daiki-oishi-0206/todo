@@ -1,25 +1,44 @@
 /* フォームスペース */
-.todo{
+.todo__contents{
     max-width: 1200px;
     margin: 50px auto ;
 }
 
-.todo__form{
-    margin-bottom: 40px;
+.todo__new{
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
-.todo__form form {
+.todo__new--title{
+    font-size: 25px;
+}   
+
+.todo__search--title {
+    font-size: 25px;
+}
+
+.todo__new form {
     display: flex;
     justify-content: center;
-    gap: 50px;
 }
 
-.todo__input{
+.todo__input--todo{
     width: 500px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 3px;
+    margin-right: 20px;
+}
+
+.todo__input--category{
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin-right: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .todo__button {
@@ -32,6 +51,16 @@
     border-radius: 3px;
 }
 
+.todo__search{
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.todo__search form{
+    display: flex;
+    justify-content: center;
+}
+
 /* タスクスペース */
 .todo__list {
     max-width: 700px;
@@ -42,6 +71,11 @@
     margin: 0px 0px 20px 0px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+}
+
+.todo__list--title span{
+    width: 250px;
 }
 
 .todo__list--items {
@@ -60,12 +94,17 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.todo__update--text{
+.todo__row{
+    display: flex;
+    align-items: center;
+}
+
+.todo__list--task{
     border: none;
     outline: none;
     font-size: 15px;
     font-weight: bold;
-    width: 300px;
+    width: 250px;
 }
 
 .todo__btns{

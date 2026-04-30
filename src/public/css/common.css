@@ -4,6 +4,9 @@
 }
 
 .header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -13,4 +16,10 @@
     font-size: 24px;
     text-decoration: none;
     margin: 0;
+}
+
+.header__categories{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
 }

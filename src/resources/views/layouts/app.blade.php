@@ -19,6 +19,9 @@
                     Todo
                 </a>
             </h2>
+            <a href="/categories" class="header__categories">
+                カテゴリ一覧
+            </a>
         </div>
     </header>
 
