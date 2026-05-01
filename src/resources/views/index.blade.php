@@ -31,9 +31,14 @@
         <form action="/todos" method="post">
             @csrf
             <input class="todo__input--todo" type="text" name="content" value="{{ old('content') }}">
-            <span class="todo__input--category">
-                カテゴリ
-            </span>
+            <select name="category_id" class="todo__input--category">
+                <option value="">カテゴリ</option>
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">
+                        {{$category->name}}
+                    </option>
+                @endforeach
+            </select>
             <button class=" todo__button" type="submit">作成</button>
         </form>
     </div>
@@ -63,10 +68,7 @@
             <li class="todo__list--item">
                 <div class="todo__row">
                     <input type="text" class="todo__list--task" name="content" value="{{$todo->content}}">
-                    <span class="todo__list--task">
-                        カテゴリ
-                    </span>
-
+                    <input type="text" class="todo__list--category" value="{{$todo->category->name ?? ''}}">
                 </div>
 
                 <!-- ボタン -->
