@@ -23,3 +23,4 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/categories', [CategoryController::class, 'store']);
 Route::post('/categories/update', [CategoryController::class, 'update']);
 Route::post('/categories/delete', [CategoryController::class, 'destroy']);
+Route::get('/todos/search', [TodoController::class, 'search']);

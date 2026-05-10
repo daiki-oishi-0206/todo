@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Todos;
+use App\Models\Todo;
 use App\Http\Requests\TodoRequest;
 use App\Models\Category;
 
@@ -12,14 +12,14 @@ class TodoController extends Controller
 
     public function index()
     {
-        $todos = Todos::with('category')->get();
+        $todos = Todo::with('category')->get();
         $categories = Category::all();
         return view('index', compact('todos', 'categories'));
     }
 
     public function store(TodoRequest $request)
     {
-        Todos::create([
+        Todo::create([
             'content' => $request->input('content'),
             'category_id' => $request->input('category_id')
         ]);
@@ -27,7 +27,7 @@ class TodoController extends Controller
     }
 
     public function update(TodoRequest $request){
-        $todo = Todos::find($request->input('id'));
+        $todo = Todo::find($request->input('id'));
         $todo->update([
             'content'=>$request->input('content')
         ]);
@@ -36,8 +36,14 @@ class TodoController extends Controller
     }
 
     public function destroy(Request $request){
-        $todo = Todos::find($request->input('id'))-> delete();
+        $todo = Todo::find($request->input('id'))-> delete();
         return redirect('/')->with('message', '削除しました');
 
+    }
+
+    public function search(Request $request){
+        $todos = Todo::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->get();
+        $categories = Category::all();
+        return view('index', compact('todos', 'categories'));
     }
 }

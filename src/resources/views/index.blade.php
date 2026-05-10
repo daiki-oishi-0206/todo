@@ -31,12 +31,12 @@
         <form action="/todos" method="post">
             @csrf
             <input class="todo__input--todo" type="text" name="content" value="{{ old('content') }}">
-            <select name="category_id" class="todo__input--category">
-                <option value="">カテゴリ</option>
+            <select name="category_id" class="todo__input--category" required>
+                <option value="" selected hidden>カテゴリ</option>
                 @foreach($categories as $category)
-                    <option value="{{$category->id}}">
-                        {{$category->name}}
-                    </option>
+                <option value="{{$category->id}}">
+                    {{$category->name}}
+                </option>
                 @endforeach
             </select>
             <button class=" todo__button" type="submit">作成</button>
@@ -46,12 +46,17 @@
     <!-- 検索画面 -->
     <div class="todo__search">
         <h3 class="todo__search--title">Todo検索</h3>
-        <form action="/todos" method="post">
+        <form action="/todos/search" method="get">
             @csrf
-            <input class="todo__input--todo" type="text" name="content" value="{{ old('content') }}">
-            <span class="todo__input--category">
-                カテゴリ
-            </span>
+            <input class="todo__input--todo" type="text" name="keyword" value="{{ old('keyword') }}">
+            <select name="category_id" class="todo__input--category">
+                <option value="" selected hidden>カテゴリ</option>
+                @foreach($categories as $category)
+                <option value="{{$category->id}}">
+                    {{$category->name}}
+                </option>
+                @endforeach
+            </select>
             <button class=" todo__button" type="submit">検索</button>
         </form>
     </div>
